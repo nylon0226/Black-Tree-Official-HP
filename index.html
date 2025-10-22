@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlakTree Official</title>
+  <link rel="stylesheet" href="common.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <div class="viewport-container">
+
+    <header class="top-bar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li>
+            <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+              Music
+            </a>
+          </li>          
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="contact.html">✉</a></li>
+        </ul>
+      </div>
+      <div class="logo-center">
+        <a href="index.html">
+          <img
+           id="logoGif"
+           src="assets/BlakTree 3D.gif"
+           alt="BlakTree 3D ロゴ"
+           class="logo-gif"
+        />
+        </a>
+      </div>      
+
+      <nav class="menu-right">
+        <ul>
+          <li><a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">Music</a></li>
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-mail">
+        <a href="contact.html">✉</a>
+      </div>
+    </header>
+
+    <div class="flow-line"></div>
+    <div id="particles-js" class="particles-background"></div>
+    <section class="background-image"></section>
+
+    <div class="footer-social-icons">
+      <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+        <img src="assets/bandcamp-logotype.png" alt="Bandcamp Logo" class="social-icon">
+      </a>
+      <a href="https://x.com/BlakTree0424" target="_blank" rel="noopener">
+        <img src="assets/logo-black.png" alt="X Logo" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/BlakTree0424/" target="_blank" rel="noopener">
+        <img src="assets/Instagram.png" alt="Instagram Logo" class="social-icon">
+      </a>
+    </div>             
+    <footer class="footer-branding">ⓇBlakTree 2025</footer>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      // 粒子演出の初期化
+      tsParticles.load("particles-js", {
+        fullScreen: { enable: false },
+        background: { color: { value: "transparent" } },
+        particles: {
+          number: { value: 80, density: { enable: true, area: 800 } },
+          color: { value: ["#ff00ff", "#ffff00", "#00ffff", "#F6F1E5"] },
+          shape: { type: "circle" },
+          opacity: { value: 0.6 },
+          size: { value: { min: 1.5, max: 3 } },
+          move: {
+            enable: true,
+            speed: 0.6,
+            direction: "none",
+            outModes: { default: "bounce" }
+          }
+        },
+        interactivity: {
+          events: {
+            onHover: { enable: false },
+            onClick: { enable: false }
+          }
+        },
+        detectRetina: true
+      });
+    });
+  </script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlakTree — Item</title>
+
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="common.css" />
+  <!-- ITEM専用スタイル -->
+  <link rel="stylesheet" href="item.css" />
+</head>
+<body class="item-body">
+  <div class="viewport-container">
+
+    <header class="top-bar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li>
+            <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+              Music
+            </a>
+          </li>          
+          <li><a href="item.html" class="current-page">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="contact.html">✉</a></li>
+        </ul>
+      </div>
+      <div class="logo-center">
+        <a href="index.html">
+          <img
+           id="logoGif"
+           src="assets/BlakTree 3D.gif"
+           alt="BlakTree 3D ロゴ"
+           class="logo-gif"
+        />
+        </a>
+      </div>
+      <nav class="menu-right">
+        <ul>
+          <li><a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">Music</a></li>
+          <li><a href="item.html" class="current-page">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+        </ul>
+      </nav>
+      <div class="menu-mail">
+        <a href="contact.html">✉</a>
+      </div>
+    </header>
+
+    <div class="flow-line"></div>
+    <h1 class="page-title">Item</h1>
+
+    <div class="item-gallery">
+<!-- 商品ギャラリー開始 -->
+      <div class="item-card">
+<!-- 商品カード（個別アイテム） -->
+        <a href="item_detail_1.html">
+          <img src="assets/BlakTree 3D-2.gif" alt="BlakTree Tシャツ">
+        </a>
+        <h3 class="item-title">BlakTree Tシャツ</h3>
+        <p class="item-price">¥4,000</p>
+        <p class="item-desc" style="display:none;">柔らかなコットン素材のオリジナルプリントTシャツ。</p>
+        <div class="info" style="display:none;">カラー:<em>ブラック</em><br>サイズ:S / M / L</div>
+        <a href="#" class="buy-button" style="display:none;">Buy</a>
+      </div>
+      <div class="item-card">
+<!-- 商品カード（個別アイテム） -->
+        <a href="item_detail_2.html">
+          <img src="assets/ロゴ.png" alt="BlakTree マグカップ">
+        </a>
+        <h3 class="item-title">BlakTree マグカップ</h3>
+        <p class="item-price">¥2,200</p>
+        <p class="item-desc" style="display:none;">ロゴ入り陶器製マグカップ、電子レンジ・食洗機対応。</p>
+        <div class="info" style="display:none;">容量:<em>350ml</em><br>素材:陶器</div>
+        <a href="#" class="buy-button" style="display:none;">Buy</a>
+      </div>
+      <div class="item-card">
+<!-- 商品カード（個別アイテム） -->
+        <a href="item_detail_3.html">
+          <img src="assets/ロゴ.png" alt="BlakTree パーカー">
+        </a>
+        <h3 class="item-title">BlakTree パーカー</h3>
+        <p class="item-price">¥8,500</p>
+        <p class="item-desc" style="display:none;">裏起毛で暖かいプルオーバーパーカー、ユニセックス。</p>
+        <div class="info" style="display:none;">カラー:<em>グレー</em><br>サイズ:M / L</div>
+        <a href="#" class="buy-button" style="display:none;">Buy</a>
+      </div>
+      <div class="item-card">
+<!-- 商品カード（個別アイテム） -->
+        <a href="item_detail_4.html">
+          <img src="assets/ロゴ.png" alt="BlakTree ステッカーセット">
+        </a>
+        <h3 class="item-title">BlakTree ステッカーセット</h3>
+        <p class="item-price">¥1,000</p>
+        <p class="item-desc" style="display:none;">ロゴ＆アイコンステッカー5枚入り、防水仕様。</p>
+        <div class="info" style="display:none;">耐水性:<em>あり</em><br>サイズ:各50mm</div>
+        <a href="#" class="buy-button" style="display:none;">Buy</a>
+      </div>
+    </div>
+    <div class="footer-social-icons">
+      <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+        <img src="assets/bandcamp-logotype.png" alt="Bandcamp Logo" class="social-icon">
+      </a>
+      <a href="https://x.com/BlakTree0424" target="_blank" rel="noopener">
+        <img src="assets/logo-black.png" alt="X Logo" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/BlakTree0424/" target="_blank" rel="noopener">
+        <img src="assets/Instagram.png" alt="Instagram Logo" class="social-icon">
+      </a>
+  
+    </div>  
+    <footer class="footer-branding">ⓇBlakTree 2025</footer>
+  </div>
+
+  <!-- 共通スクリプト -->
+  <script src="scripts.js"></script>
+
+  <script>
+  window.addEventListener("load", () => {
+    const video = document.getElementById("logoVideo");
+    if (!video) return;
+
+    const playWithDelay = () => {
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.playbackRate = 4.5;
+        video.play().catch(e => console.warn("再生エラー:", e));
+      }, 2000);
+    };
+
+    playWithDelay();
+    video.addEventListener("ended", playWithDelay);
+
+    // 途中停止時は即座に0秒へ巻き戻す
+    video.addEventListener("pause", () => {
+      if (!video.ended && video.currentTime !== 0) {
+        video.currentTime = 0;
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlakTree — Contact</title>
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+</head>
+<body class="contact-body">
+<!-- ✉ お問い合わせページの本文 -->
+  <div class="viewport-container">
+
+    <header class="top-bar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li><a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">Music</a></li>
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="contact.html">✉</a></li>
+        </ul>
+      </div>
+      <div class="logo-center">
+        <a href="index.html">
+          <img
+           id="logoGif"
+           src="assets/BlakTree 3D.gif"
+           alt="BlakTree 3D ロゴ"
+           class="logo-gif"
+        />
+        </a>
+      </div>
+
+      <nav class="menu-right">
+        <ul>
+          <li>
+            <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+              Music
+            </a>
+          </li>          
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-mail">
+        <a href="mailto:info@blaktree.jp" class="current-page">✉</a>
+      </div>
+    </header>
+
+    <div class="flow-line"></div>
+    <h1 class="page-title">Contact</h1>
+
+    <div class="contact-section">
+      <form id="contact-form">
+<!-- メール送信用フォーム開始 -->
+        <!-- ここを必ず含める -->
+        <input type="hidden" name="_subject" value="From the Black Tree official website">
+
+        <label>Name<br>
+<!-- 名前入力フィールド -->
+          <input type="text" name="name" required>
+        </label>
+
+        <label>Mail Address<br>
+<!-- メールアドレス入力 -->
+          <input type="email" name="email" required>
+        </label>
+
+        <label>Mail Address (double check)<br>
+          <input type="email" name="emailCheck" required>
+        </label>
+
+        <label>Title<br>
+          <input type="text" name="title" required>
+        </label>
+
+        <label>Message</label>
+         <textarea name="message" required></textarea>
+
+        <p class="form-warning">* All fields are required to submit the form.</p>
+
+
+        <button type="submit" class="send-button">Send</button>
+<!-- 送信ボタン -->
+
+        <p id="form-status" class="status-message"></p>
+      </form>
+    </div>
+    <div class="footer-social-icons">
+      <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+        <img src="assets/bandcamp-logotype.png" alt="Bandcamp Logo" class="social-icon">
+      </a>
+      <a href="https://x.com/BlakTree0424" target="_blank" rel="noopener">
+        <img src="assets/logo-black.png" alt="X Logo" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/BlakTree0424/" target="_blank" rel="noopener">
+        <img src="assets/Instagram.png" alt="Instagram Logo" class="social-icon">
+      </a>
+  
+    </div>  
+    <footer class="footer-branding">ⓇBlakTree 2025</footer>
+  </div>
+
+  <script>
+<!-- メール送信処理用のJavaScript -->
+    
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById("form-status");
+
+      // メールアドレス一致チェック
+      if (form.email.value.trim() !== form.emailCheck.value.trim()) {
+        status.textContent = "Email addresses do not match.";
+        status.style.color = "red";
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      // フォームの全フィールド（hidden含む）をまとめて取得
+      const formData = new FormData(form);
+
+      fetch("https://formsubmit.co/ajax/blaktree1986@gmail.com", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          status.textContent = "Message sent successfully. Thank you!";
+          status.style.color = "green";
+        } else {
+          status.textContent = "Failed to send. Please try again.";
+          status.style.color = "red";
+        }
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+        form.reset();
+      })
+      .catch(() => {
+        status.textContent = "A network error occurred.";
+        status.style.color = "red";
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  </script>
+
+  <script src="scripts.js"></script>
+
+  <script>
+<!-- メール送信処理用のJavaScript -->
+  window.addEventListener("load", () => {
+    const video = document.getElementById("logoVideo");
+    if (!video) return;
+
+    const playWithDelay = () => {
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.playbackRate = 4.5;
+        video.play().catch(e => console.warn("再生エラー:", e));
+      }, 2000);
+    };
+
+    playWithDelay();
+    video.addEventListener("ended", playWithDelay);
+
+    // 途中停止時は即座に0秒へ巻き戻す
+    video.addEventListener("pause", () => {
+      if (!video.ended && video.currentTime !== 0) {
+        video.currentTime = 0;
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

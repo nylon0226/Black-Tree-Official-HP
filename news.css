@@ -1,0 +1,68 @@
+/* Newsページ専用スタイル */
+body.news-body {
+  background-color: #F6F1E5;
+  color: #0e0e0e;
+}
+
+.news-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem 0;  
+}
+
+.news-item + .news-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.news-item img {
+  width: 200px;
+  height: auto;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.news-content h3 {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.news-content p {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .news-item h3 {
+    font-size: 0.8rem;
+  }
+
+  .news-item p {
+    font-size: 0.6rem;
+  }
+
+  .news-item img {
+    width: 15%;
+    max-width: 320px !important;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+  
+  

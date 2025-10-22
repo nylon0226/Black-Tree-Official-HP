@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlakTree — News</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="news.css">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+</head>
+<body class="news-body">
+  <div class="viewport-container">
+    <header class="top-bar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li>
+            <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+              Music
+            </a>
+          </li>          
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="contact.html">✉</a></li>
+        </ul>
+      </div>
+      <div class="logo-center">
+        <a href="index.html">
+          <img
+           id="logoGif"
+           src="assets/BlakTree 3D.gif"
+           alt="BlakTree 3D ロゴ"
+           class="logo-gif"
+        />
+        </a>
+      </div>
+      <nav class="menu-right">
+        <ul>
+          <li><a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">Music</a></li>
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html" class="current-page">News</a></li>
+          <li><a href="video.html">Video</a></li>
+        </ul>
+      </nav>
+      <div class="menu-mail">
+        <a href="contact.html">✉</a>
+      </div>
+    </header>
+
+    <div class="flow-line"></div>
+    <h1 class="page-title">News</h1>
+
+    <div class="news-section">
+<!-- ニュース一覧セクション -->
+      <!-- トピック① -->
+      <div class="news-item">
+<!-- ニュース記事 -->
+        <img src="assets/BlakTree 3D.png" alt="3Dロゴリリース">
+        <div class="news-content">
+          <h3>3Dロゴアニメーション公開</h3>
+          <p>
+            新たに制作したBlakTreeの3Dロゴアニメーションをトップページに導入しました。  
+            2秒ごとにリセットされるダイナミックな動きをお楽しみください。
+          </p>
+        </div>
+      </div>
+      <!-- トピック② -->
+      <div class="news-item">
+<!-- ニュース記事 -->
+        <img src="assets/BlakTree.png" alt="新ロゴデザイン">
+        <div class="news-content">
+          <h3>公式ロゴデザイン刷新</h3>
+          <p>
+            平面ロゴをよりミニマルでモダンなデザインにアップデートしました。  
+            ダーク・ライト両対応版をご用意しています。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-social-icons">
+      <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+        <img src="assets/bandcamp-logotype.png" alt="Bandcamp Logo" class="social-icon">
+      </a>
+      <a href="https://x.com/BlakTree0424" target="_blank" rel="noopener">
+        <img src="assets/logo-black.png" alt="X Logo" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/BlakTree0424/" target="_blank" rel="noopener">
+        <img src="assets/Instagram.png" alt="Instagram Logo" class="social-icon">
+      </a>
+  
+    </div>  
+    <footer class="footer-branding">ⓇBlakTree 2025</footer>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const video = document.getElementById("logoVideo");
+      if (!video) return;
+
+      const playWithDelay = () => {
+        setTimeout(() => {
+          video.currentTime = 0;
+          video.playbackRate = 4.5;
+          video.play().catch(e => console.warn("再生エラー:", e));
+        }, 2000);
+      };
+
+      playWithDelay();
+      video.addEventListener("ended", playWithDelay);
+
+      // 途中停止時は即座に0秒へ巻き戻す
+      video.addEventListener("pause", () => {
+        if (!video.ended && video.currentTime !== 0) {
+          video.currentTime = 0;
+        }
+      });
+    });
+  </script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

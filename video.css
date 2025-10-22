@@ -1,0 +1,65 @@
+/* Videoページ専用スタイル */
+body.video-body {
+  background-color: #F6F1E5;
+  color: #0e0e0e;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.video-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.video-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+}
+
+.video-item + .video-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.video-item img {
+  width: 200px;
+  height: auto;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.video-content h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+}
+
+.video-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .video-item h3 {
+    font-size: 0.8rem;
+  }
+
+  .video-item p {
+    font-size: 0.6rem;
+  }
+
+  .video-item img {
+    width: 80%;
+    max-width: 320px !important;
+    height: auto;
+  }
+}
+
+
+
+
+
+  
+  

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlakTree パーカー</title>
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="item.css" />
+  <style>
+    .slider-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+    }
+    .main-image {
+      width: 300px;
+      height: auto;
+    }
+    .thumbnail-list {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .thumbnail-list img {
+      width: 60px;
+      height: auto;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .thumbnail-list img.active {
+      border-color: #000;
+    }
+    .item-info {
+      max-width: 400px;
+    }
+    .breadcrumb {
+  margin: 0.4rem 0 0 1rem;
+  font-size: 1rem;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  color: #444444;
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: #444444;
+  font-weight: normal;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;        /* ← 線を細く */
+  text-underline-offset: 2px;            /* ← 線を少し下にずらすとスマート */
+}
+.breadcrumb-current {
+  border-bottom: 1px solid #444444;
+  padding-bottom: 0;
+  line-height: 1.1;               /* ← これで上下の余白を詰める */
+  display: inline-block;        /* ← 行の高さ調整を効かせるために必要 */
+}
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap" rel="stylesheet">
+</head>
+<body class="item-body">
+  <div class="viewport-container">
+
+    <header class="top-bar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div id="mobile-menu" class="mobile-menu">
+        <ul>
+          <li>
+            <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+              Music
+            </a>
+          </li>          
+          <li><a href="item.html">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+          <li><a href="contact.html">✉</a></li>
+        </ul>
+      </div>
+      <div class="logo-center">
+        <a href="index.html">
+          <img
+           id="logoGif"
+           src="assets/BlakTree 3D.gif"
+           alt="BlakTree 3D ロゴ"
+           class="logo-gif"
+        />
+        </a>
+      </div>
+      <nav class="menu-right">
+        <ul>
+          <li><a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">Music</a></li>
+          <li><a href="item.html" class="current-page">Item</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="video.html">Video</a></li>
+        </ul>
+      </nav>
+      <div class="menu-mail">
+        <a href="contact.html">✉</a>
+      </div>
+    </header>
+
+    <div class="flow-line"></div>
+<div class="breadcrumb">
+  <a href="item.html">Item</a> &rarr; Item detail
+</div>
+
+    <div class="slider-wrapper">
+      <div>
+        <img id="mainImage" src="assets/ロゴ.png" alt="BlakTree パーカー" class="main-image">
+        <div class="thumbnail-list">
+          <img src="assets/ロゴ.png" onclick="changeImage(this)" class="active">
+          <img src="assets/ロゴ.png" onclick="changeImage(this)">
+          <img src="assets/ロゴ.png" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="item-card item-info">
+        <h3 class="item-title">BlakTree パーカー</h3>
+        <p class="item-price">¥8,500</p>
+        <p class="item-desc">裏起毛で暖かいプルオーバーパーカー、ユニセックス。</p>
+        <div class="info">カラー: グレー<br>サイズ: M / L</div>
+        <a href="#" class="buy-button">Buy</a>
+      </div>
+    </div>
+    <div class="footer-social-icons">
+      <a href="https://blaktree.bandcamp.com/" target="_blank" rel="noopener">
+        <img src="assets/bandcamp-logotype.png" alt="Bandcamp Logo" class="social-icon">
+      </a>
+      <a href="https://x.com/BlakTree0424" target="_blank" rel="noopener">
+        <img src="assets/logo-black.png" alt="X Logo" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/BlakTree0424/" target="_blank" rel="noopener">
+        <img src="assets/Instagram.png" alt="Instagram Logo" class="social-icon">
+      </a>
+  
+    </div>  
+    <footer class="footer-branding">ⓇBlakTree 2025</footer>
+  </div>
+
+<script>
+  function changeImage(thumb) {
+    const mainImage = document.getElementById("mainImage");
+    mainImage.src = thumb.src;
+    document.querySelectorAll(".thumbnail-list img").forEach(img => {
+      img.classList.remove("active");
+    });
+    thumb.classList.add("active");
+  }
+
+  window.addEventListener("load", () => {
+    const video = document.getElementById("logoVideo");
+    if (!video) return;
+    });</script>
+  <script src="scripts.js"></script>
+
+  <script>
+  window.addEventListener("load", () => {
+    const video = document.getElementById("logoVideo");
+    if (!video) return;
+
+    const playWithDelay = () => {
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.playbackRate = 4.5;
+        video.play().catch(e => console.warn("再生エラー:", e));
+      }, 2000);
+    };
+
+    playWithDelay();
+    video.addEventListener("ended", playWithDelay);
+
+    // 途中停止時は即座に0秒へ巻き戻す
+    video.addEventListener("pause", () => {
+      if (!video.ended && video.currentTime !== 0) {
+        video.currentTime = 0;
+      }
+    });
+  });
+</script>
+</body>
+</html>
