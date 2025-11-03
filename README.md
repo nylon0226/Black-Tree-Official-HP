@@ -1,3 +1,13 @@
+# Black-Tree-Official-HP
+
+![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Web Design](https://img.shields.io/badge/-Web%20Design-9C27B0)
+![Portfolio](https://img.shields.io/badge/-Portfolio-black)
+
+「Black Tree」ブランドの公式ウェブサイト。HTML/CSS/JavaScriptで構築されたポートフォリオ型Webページ。
+
 # 🌿 BlakTree HP — Official Website
 
 ## 概要
